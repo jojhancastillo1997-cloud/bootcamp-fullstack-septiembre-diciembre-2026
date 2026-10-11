@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.layout-container{
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main main"
+        "footer footer"
+    ;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header{
+    grid-area: header;
+    background-color: #F7C272;
+    color: black;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav{
+    display: flex;
+    gap: 55px;
+}
+.nav a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0,3;
+    font-size: 20px;
+}
+.nav a:hover{
+    color: #333;
+}
+
+.note {
+    width: 100%;
+    max-width: 1200ox;
+    min-height: 100vh;
+    height: 300px; 
+    margin: 0;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+
+    background-image: url(img/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+.profile{
+    max-width: 700px;
+
+}
+
+.profile h1{
+    font-size: 160px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.profile p{
+    font-size: 35px;
+    margin: 4;
+    margin-bottom: 40px;
+}
+.profile button{
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px ;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.profile button:hover{
+    background-color: aliceblue;
+}
+
+    /* seccion dos */
+.primero   {
+    justify-content: center;
+    margin: 90px;
+}
+.primero h3{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 15px;
+}
+.primero p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+    /* seccion tres */
+
+.segundo{
+    background-color: #B6F2EE;
+    color: black;
+    text-align: center;
+    padding: 100px 100px;
+}
+.segundo h3{
+    justify-content: center;
+    display: flex;
+    margin: 25px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 250px;
+}
+.imagen img{
+    width: 150px;
+}
+.imagen p{
+    margin-top: 30px;
+    margin: 20px;
+    font-weight: 500;
+}
+.imagen button{
+    background-color: orange;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+}
+.imagen button:hover{
+    background-color: aliceblue;
+}
+
+    /* seccion cuatro */
+.tercero{
+    background-image: url(img/bg-grid.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tercero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* margin: 100px; */
+}
+.final{
+    max-width: 500px;
+    /* margin-top: 200px ; */
+}
+.final h3{
+    font-weight: bold;
+    font-size: 30px;
+}
+.display img{
+    width: 250px;
+    height: auto;
+}
+
+.pie{
+    background-color: rgb(35, 35, 35);
+    color: white;
+    display: flex;
+    justify-content:center;
+}
