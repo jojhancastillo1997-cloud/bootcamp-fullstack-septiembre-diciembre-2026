@@ -239,4 +239,4 @@ const actualizarTotales = () => {
     totalProductos.textContent = cantidad
     contadorCarrito.textContent = cantidad
     totalCarrito.textContent = formatearPrecio(total)
-}
+} 
