@@ -1,37 +1,37 @@
-// =========================PRODUCTOS=========================
+// ========================== PRODUCTOS ===========================
 const productos = [
     {
         id: 1,
         nombre: 'Laptop',
         descripcion: 'Laptop para trabajo y estudio',
         precio: 2500000,
-        imagen: 'https://placehold.co/600x400?text=Laptop',
-        },
+        imagen: 'https://placehold.co/600x400?text=Laptop'
+    },
     {
         id: 2,
         nombre: 'Mouse',
-        descripcion: 'Mouse inalambrico',
+        descripcion: 'Mouse inalámbrico',
         precio: 80000,
-        imagen: 'https://placehold.co/600x400?text=Mouse',
-        },
+        imagen: 'https://placehold.co/600x400?text=Mouse'
+    },
     {
         id: 3,
         nombre: 'Teclado',
-        descripcion: 'Teclado mecanico RGB',
+        descripcion: 'Teclado mecánico RGB',
         precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado',
+        imagen: 'https://placehold.co/600x400?text=Teclado'
     },
 ]
 
-// ===============================CARRITO===============
-let carrito =[]
+// ==================== CARRITO =========================
+let carrito = []
 
-// =============================ELEMENTOS DE HTML===================
+// ========================= ELEMENTOS DEL HTML ==================
 
-const botonesaAgregar = document.querySelectorAll('.btn-agregar')
+const botonesAgregar = document.querySelectorAll('.btn-agregar')
 
 const listaCarrito = document.getElementById('listaCarrito')
-const listaVacio = document.getElementById('carritoVacio')
+const carritoVacio = document.getElementById('carritoVacio')
 
 const contadorCarrito = document.getElementById('contadorCarrito')
 const totalProductos = document.getElementById('totalProductos')
@@ -39,12 +39,12 @@ const btnVaciarCarrito = document.getElementById('btnVaciarCarrito')
 const btnComprar = document.getElementById('btnComprar')
 const totalCarrito = document.getElementById('totalCarrito')
 
-// ===============EVENTOS DE LOS BOTONES DE AGRUEGAR AL CARRITO============
+// ================ EVENTOS DE LOS BOTONES DE AGREGAR AL CARRITO ================
 
-botonesaAgregar.forEach(boton => {
-    boton.addEventListener('click', () =>{
+botonesAgregar.forEach(boton => {
+    boton.addEventListener('click', () => {
         const id = Number(boton.dataset.id)
-
+        
         agregarAlCarrito(id)
     })
 })
@@ -57,7 +57,7 @@ const formatearPrecio = (valor) => {
     }).format(valor)
 }
 
-// =================ACTUALIZAR CARRITO====================
+// ======================== ACTUALIZAR CARRITO ================================
 const actualizarCarrito = () => {
     listaCarrito.innerHTML = ''
 
@@ -73,7 +73,7 @@ const actualizarCarrito = () => {
         item.classList.add(
             'carrito-item',
             'row',
-            'align-item-center'
+            'align-items.center'
         )
 
         item.innerHTML = `
@@ -89,19 +89,51 @@ const actualizarCarrito = () => {
                 <p class="text-muted mb-0">
                     ${ producto.descripcion }
                 </p>
+                <strong>
+                    ${ formatearPrecio(producto.precio * producto.cantidad) }
+                </strong>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="d-flex align-items-center gap-2">
+                    <button 
+                        class="btn btn-outline-secondary btn-sm btn-disminuir"
+                        data-id="${ producto.id }"
+                    >
+                        -
+                    </button>
+
+                    <span class="cantidad">
+                        ${ producto.cantidad }
+                    </span>
+
+                    <button 
+                        class="btn btn-outline-secondary btn-sm btn-aumentar"
+                        data-id="${ producto.id }"
+                    >
+                        +
+                    </button>
+                </div>
             </div>
 
-            <strong>
-                ${ formatearPrecio (producto.precio * producto.cantidad) }
-            </strong>
-            
+            <div class="col-md-1 text-end">
+                <button
+                    class="btn btn-danger btn-sm btn-eliminar"
+                    data-id="${ producto.id }"
+                >
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
         `
 
         listaCarrito.appendChild(item)
     })
+
+    actualizarTotales()
+    agregarEventorCarrito()
 }
 
-// ========================AGREGAR PRODUCTOS AL CARRITO================
+// =================== AGREGAR PRODUCTOS AL CARRITO ==================
 
 const agregarAlCarrito = (id) => {
     const producto = productos.find(producto => producto.id === id)
@@ -118,4 +150,93 @@ const agregarAlCarrito = (id) => {
     }
 
     actualizarCarrito()
+}
+
+// ======================= boton vaciar carrito de compras =======================
+
+btnVaciarCarrito.addEventListener('click', () => {
+    carrito = []
+
+    actualizarCarrito()
+})
+
+// ======================== EVENTOS DEL CARRITO ============================
+const agregarEventorCarrito = () => {
+    const botonesAumentar = document.querySelectorAll('.btn-aumentar')
+
+    botonesAumentar.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const id = Number(boton.dataset.id)
+            aumentarCantidad(id)
+        })
+    })
+
+    const botonesDisminuir = document.querySelectorAll('.btn-disminuir')
+
+    botonesDisminuir.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const id = Number(boton.dataset.id)
+            disminuirCantidad(id)
+        })
+    })
+
+    const botonesEliminar = document.querySelectorAll('.btn-eliminar')
+
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const id = Number(boton.dataset.id)
+            eliminarDelCarrito(id)
+        })
+    })
+}
+
+const aumentarCantidad = (id) => {
+    const producto = carrito.find(producto => producto.id === id)
+
+    if(producto) {
+        producto.cantidad++
+    }
+
+    actualizarCarrito()
+}
+
+
+const disminuirCantidad = (id) => {
+    const producto = carrito.find(producto => producto.id === id)
+
+    if(producto) {
+        producto.cantidad--
+    }
+
+    actualizarCarrito()
+}
+
+const eliminarDelCarrito = (id) => {
+    carrito = carrito.filter(producto => producto.id !== id)
+
+    actualizarCarrito()
+}
+
+const actualizarTotales = () => {
+
+    //cantidad total de productos
+    const cantidad = carrito.reduce(
+        (total, producto) => {
+            return total + producto.cantidad
+        },
+        0
+    )
+
+    //precio total
+
+    const total = carrito.reduce(
+        (total, producto) => {
+            return total + producto.precio * producto.cantidad
+        },
+        0
+    )
+
+    totalProductos.textContent = cantidad
+    contadorCarrito.textContent = cantidad
+    totalCarrito.textContent = formatearPrecio(total)
 }
