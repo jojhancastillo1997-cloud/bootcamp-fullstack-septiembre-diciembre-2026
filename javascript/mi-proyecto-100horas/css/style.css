@@ -14,7 +14,14 @@ body {
 .producto-card img {
     height: 220px;
     object-fit: cover;
+
+    /* opacity: 0;
+    transform: translateY(-40px); /* Empieza 40px más arriba */
+    /* animation: caerDesdeArriba 0.8s ease-out forwards; */ 
 }
+
+
+    
 
 .precio {
     font-size: 1.3rem;
@@ -39,3 +46,14 @@ body {
     min-width: 40px;
     text-align: center;
 }
+
+/* @keyframes caerDesdeArriba {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición normal */
+    /* }
+}  */

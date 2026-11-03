@@ -44,80 +44,80 @@ const productos = [
     },
     {
         id: 7,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'MotorDron',
+        descripcion: 'Es el componente electromecánico que transforma la energía eléctrica de la batería en movimiento de rotación para hacer girar las hélices y generar el empuje necesario para volar.',
+        precio: 9000,
+        imagen: 'fotos/Kit de motores para mini Dron.jpg'
     },
     {
         id: 8,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'BombaAgua',
+        descripcion: 'Es un dispositivo eléctrico compacto que funciona con corriente directa. Su función principal es mover agua de un punto a otro o generar presión, destacando por su bajo consumo de energía, portabilidad y seguridad en entornos húmedos.',
+        precio: 18000,
+        imagen: 'fotos/15cf271bee85ea730e5affce0e1e51a7ea73b97e-1642196132-74123145214.jpg.thumb_400x300.jpg'
     },
     {
         id: 9,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'SensorUltrasonico',
+        descripcion: 'Es un dispositivo electrónico que mide la distancia hacia un objeto sin contacto físico, utilizando ondas sonoras de alta frecuencia (ultrasonido) que el oído humano no puede escuchar.',
+        precio: 12000,
+        imagen: 'fotos/02-1024x983.jpg'
     },
     {
         id: 10,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'SensorPir',
+        descripcion: 'Es un dispositivo electrónico que detecta el movimiento al medir los cambios en la radiación infrarroja que emiten los objetos y personas en su campo de visión.',
+        precio: 10000,
+        imagen: 'fotos/IF-SENSOR-SR501.jpg'
     },
     {
         id: 11,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'SensorIr',
+        descripcion: 'Es un dispositivo optoelectrónico que detecta o mide la radiación electromagnética infrarroja en su entorno, la cual es invisible para el ojo humano.',
+        precio: 10000,
+        imagen: 'fotos/SENSOR-INFRAROJO-TRS-500.jpg'
     },
     {
         id: 12,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'SensorGas',
+        descripcion: 'Es un dispositivo semiconductor diseñado para detectar monóxido de carbono (CO) en el aire.',
+        precio: 12000,
+        imagen: 'fotos/istockphoto-1219263313-2048x2048.jpg'
     },
     {
         id: 13,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'Fotocelda',
+        descripcion: 'Una fotocelda (también conocida como sensor crepuscular o interruptor fotoeléctrico) es un dispositivo electrónico que enciende y apaga las luces de forma automática según la cantidad de luz natural en el ambiente.',
+        precio: 2000,
+        imagen: 'fotos/fotoceldas.jpg'
     },
     {
         id: 14,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'Led',
+        descripcion: 'Un LED (del inglés Light-Emitting Diode, o diodo emisor de luz) es un componente electrónico semiconductor que transforma la energía eléctrica directamente en luz mediante un proceso llamado electroluminiscencia.',
+        precio: 200,
+        imagen: 'fotos/images.jpg'
     },
     {
         id: 15,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'LCD',
+        descripcion: 'Es un módulo de cristal líquido capaz de mostrar 16 caracteres por fila en 2 líneas (un total de 32 caracteres alfanuméricos).',
+        precio: 14000,
+        imagen: 'fotos/lcd 2x16.jpg'
     },
     {
         id: 16,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'Oled',
+        descripcion: 'Es un tipo de panel en el que cada píxel genera su propia luz de manera individual.',
+        precio: 16000,
+        imagen: 'fotos/pantallaOled.jpg'
     },
     {
         id: 17,
-        nombre: 'Teclado',
-        descripcion: 'Teclado mecánico RGB',
-        precio: 150000,
-        imagen: 'https://placehold.co/600x400?text=Teclado'
+        nombre: 'Integrado',
+        descripcion: 'Es un chip analógico-digital de 8 pines muy popular en la electrónica para generar temporizaciones, pulsos y oscilaciones.',
+        precio: 500,
+        imagen: 'fotos/Signetics_NE555N.jpg'
     },
 ]
 
