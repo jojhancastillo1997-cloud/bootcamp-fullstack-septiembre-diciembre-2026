@@ -2,14 +2,16 @@ const User = require('./../models/User')
 
 const registrar = async(peticion, respuesta) => {
     try{
-        const nombre = peticion.body.nombre
-        const email = peticion.body.email
-        const password = peticion.body.password
+        // const nombre = peticion.body.nombre
+        // const email = peticion.body.email
+        // const password = peticion.body.password
+
+        const { nombre, email, password } = peticion.body
 
         let user = new User({
-            nombre: nombre,
-            email: email,
-            password: password
+            nombre,
+            email,
+            password
         })
 
         await user.save()
@@ -19,6 +21,7 @@ const registrar = async(peticion, respuesta) => {
         })
 
     } catch(error) {
+        
         return respuesta.status(500).json({
             msg: `Error al registrar usuario ${ error.messege }` //si el servidor llega a fallar nos va a debvolver un 500 y nos va a devolver un error generico con error.message
         })
